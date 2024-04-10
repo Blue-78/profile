@@ -20,7 +20,7 @@ def custom_page(page):
 
 
 def writetocsv(data):
-    with open("/tmp/db.csv", "a", newline='') as database:
+    with open("db.csv", "a", newline='') as database:
         email = data["email"]
         subject = data["subject"]
         message = data["message"]
@@ -34,10 +34,10 @@ def sendmessage():
     if request.method == 'POST':
         data = request.form.to_dict()
         writetocsv(data)
-        with open("database.txt", "a") as w:
-
-            w.write(str(data))
-            w.write("\n")  # move the cursor to new line after writing data to the file
+        # with open("database.txt", "a") as w:
+        #
+        #     w.write(str(data))
+        #     w.write("\n")  # move the cursor to new line after writing data to the file
 
         return redirect(url_for('thankyou4'))  # used method thankyou4
     else:
