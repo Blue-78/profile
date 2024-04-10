@@ -20,7 +20,7 @@ def custom_page(page):
 
 
 def writetocsv(data):
-    with open("api/tmp/db.csv", "a", newline='') as database:
+    with open("db.csv", "a", newline='') as database:
         email = data["email"]
         subject = data["subject"]
         message = data["message"]
